@@ -18,7 +18,7 @@ class Router
     }
 
     public function direct($uri) {
-
+//        $uri = "";
 //        dd($this->routes);
 //        dd($this->routes[$uri]);
 //        array_key_exists($this->routes,$uri);

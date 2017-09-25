@@ -5,7 +5,7 @@ require 'core/bootstrap.php';
 
 
 //Chaining Methods
-$uri = "tasks";
+//$uri = "contact";
 
 //dd(trim('/about/','about'));
 //
