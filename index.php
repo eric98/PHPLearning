@@ -3,15 +3,8 @@
 require 'core/bootstrap.php';
 
 
+$uri = Request::uri();
+$type = Request::type();
 
-//Chaining Methods
-$uri = $_SERVER["REQUEST_URI"];
 
-//dd(trim('/about/','about'));
-//
-//dd($_SERVER);
-
-Router::load('app/routes.php')->direct(trim($uri,'/'));
-
-//$router = new Router();
-//$router->load();
+Router::load('app/routes.php')->direct($uri,$type);

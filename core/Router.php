@@ -3,25 +3,38 @@
 class Router
 {
 
-    protected $routes;
+    protected $routes = [
+        'GET' => [],
+        'POST' => []
+    ];
 
     public function define($routes)
     {
         $this->routes = $routes;
     }
 
-    public static function load($file)
+    public function get($uri,$file)
     {
-        $routes = new static;
-        $routes->define(require $file);
-        return $routes;
+        $this->routes['GET'][$uri] = $file;
     }
 
-    public function direct($uri) {
-//        $uri = "";
-//        dd($this->routes);
-//        dd($this->routes[$uri]);
-//        array_key_exists($this->routes,$uri);
-        require $this->routes[$uri];
+    public function post($uri,$file)
+    {
+        $this->routes['POST'][$uri] = $file;
+    }
+
+    public static function load($file)
+    {
+        $router = new static;
+        require $file;
+        return $router;
+    }
+
+    public function direct($uri,$requestType) {
+        $uri = trim($uri,'/');
+//        dd(routes[$requestType]);
+        if (!array_key_exists($uri,$this->routes[$requestType])) throw new Exception('No route found');
+
+        require $this->routes[$requestType][$uri];
     }
 }
