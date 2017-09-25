@@ -3,9 +3,10 @@
 <h1>Tasques</h1>
 
 <ul>
-    <li></li>
-    <li></li>
-    <li></li>
+
+        <?php foreach ($tasks as $task) : ?>
+    <li><?= $task->name ?></li>
+    <?php endforeach;?>
 </ul>
 
 <?php require('app/views/partials/footer.php') ?>
