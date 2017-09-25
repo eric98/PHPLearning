@@ -5,13 +5,13 @@ require 'core/bootstrap.php';
 
 
 //Chaining Methods
-//$uri = "contact";
+$uri = $_SERVER["REQUEST_URI"];
 
 //dd(trim('/about/','about'));
 //
 //dd($_SERVER);
 
-Router::load('app/routes.php')->direct($uri);
+Router::load('app/routes.php')->direct(trim($uri,'/'));
 
 //$router = new Router();
 //$router->load();
