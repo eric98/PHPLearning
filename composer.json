@@ -1,0 +1,15 @@
+{
+    "name": "alumne/php-learning",
+    "authors": [
+        {
+            "name": "eric98",
+            "email": "ergare.17@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "classmap" : [
+            "./"
+        ]
+    }
+}

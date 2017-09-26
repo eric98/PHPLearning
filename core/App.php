@@ -2,7 +2,7 @@
 
 class App
 {
-    protected $registry = [];
+    protected static $registry = [];
 
     public static function bind($name, $value)
     {
@@ -11,8 +11,8 @@ class App
 
     public static function resolve($name)
     {
-        if (!array_key_exists($name,$registry)) throw new Exception('No route found');
+        if (!array_key_exists($name,static::$registry)) throw new Exception('No route found');
 
-        return static::$registry[$name] = $value;
+        return static::$registry[$name];
     }
 }

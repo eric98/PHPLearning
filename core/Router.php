@@ -32,7 +32,6 @@ class Router
 
     public function direct($uri,$requestType) {
         $uri = trim($uri,'/');
-//        dd(routes[$requestType]);
         if (!array_key_exists($uri,$this->routes[$requestType])) throw new Exception('No route found');
 
         require $this->routes[$requestType][$uri];

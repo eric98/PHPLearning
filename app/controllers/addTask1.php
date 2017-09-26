@@ -1,5 +1,5 @@
 <?php
 
-//dd($_POST);
+$database = App::resolve('database');
 
 echo "RECIBIDO!";

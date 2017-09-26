@@ -1,7 +1,4 @@
 <?php
-/**
- * Class QueryBuilder.
- */
 
 class QueryBuilder
 {
@@ -21,7 +18,7 @@ class QueryBuilder
 
         $statement->execute();
 
-        return $statement->fetchAll(PDO::FETCH_CLASS,'Task');
+        return $statement->fetchAll(PDO::FETCH_CLASS);
     }
 
     public function where($table,$filters){
