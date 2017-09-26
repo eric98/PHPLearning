@@ -1,7 +1,9 @@
 <?php
-/**
-  * Class Connection
- */
+
+namespace ergareFramework\Database;
+
+use PDO;
+use PDOException;
 
 class Connection
 {

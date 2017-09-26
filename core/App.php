@@ -1,5 +1,7 @@
 <?php
 
+namespace ergareFramework;
+
 class App
 {
     protected static $registry = [];
