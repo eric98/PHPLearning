@@ -35,3 +35,8 @@ function fetchAllTasks($pdo) {
 
     return $statement->fetchAll(PDO::FETCH_CLASS,'Task');
 }
+
+function view($name)
+{
+    return require "app/views/{$name}.view.php";
+}
