@@ -22,13 +22,13 @@ class TasksController
 
         $tasks = $database->fetchAll('tasks');
 
-        require 'app/views/tasks.view.php';
+        return view('tasks');
     }
 
     public function create()
     {
         //show create form
-        require 'app/views/task.add.view.php';
+        return view('task.add');
     }
 
     public function store()
@@ -39,7 +39,6 @@ class TasksController
         $database->insert('tasks', [
             "name" => $_POST['name']
         ]);
-
-        require 'app/views/successfull.view.php';
+        return view('successfull');
     }
 }
